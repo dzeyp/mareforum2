@@ -1,0 +1,68 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="Julius Kanlapan">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+
+        <link href="{{ 'themes/mare-forum/assets/css/theme.css' }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+        <script>
+            $('#show-menu').click(function(e) {
+                alert();
+            })
+        </script>
+    </head>
+    <body>
+
+        <nav id="secondary">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a href=""><i class="material-icons md-36">event</i></a>
+                </div>
+                <div class="flex-item">
+                    <a><i id="show-menu" class="material-icons md-36">event</i></a>
+                </div>
+                <div class="flex-item">
+                    <a href=""><i class="material-icons md-36">event</i></a>
+                </div>
+            </div>
+        </nav>
+
+        <nav id="mobile">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a href="">MENU1</a>
+                </div>
+                <div class="flex-item">
+                    <a href="">MENU2</a>
+                </div>
+                <div class="flex-item">
+                    <a href="">MENU3</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+    </body>
+</html>
