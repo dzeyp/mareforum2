@@ -12,21 +12,34 @@ description = "Default layout"
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
 
-        <link href="{{ 'themes/mare-forum/assets/css/theme.css' }}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=News+Cycle:700|Open+Sans:300,400&display=swap" rel="stylesheet">
+
+        <link href="{{ 'themes/mare-forum/assets/css/theme.css' }}" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
         <script>
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+
             $(document).ready(function() {
                 $('#show-menu').click(function(e) {
                     $('#mobile').slideToggle('fast')
+                })
+
+                $('#menu1').mouseenter(function(e) {
+                    $('#dropdown').slideDown('fast')
+                })
+
+                $('#dropdown').mouseleave(function(e) {
+                    $('#dropdown').slideUp('fast')
                 })
             })
         </script>
@@ -36,13 +49,27 @@ description = "Default layout"
         <nav id="secondary">
             <div class="flex-container">
                 <div class="flex-item">
-                    <a href=""><i class="material-icons md-36">event</i></a>
+                    <a href="" data-toggle="tooltip" title="Some tooltip text!" data-placement="right"><i class="material-icons md-36">event</i></a>
                 </div>
                 <div class="flex-item">
-                    <a><i id="show-menu" class="material-icons md-36">event</i></a>
+                    <a href="" data-toggle="tooltip" title="Some tooltip text!" data-placement="right"><i id="show-menu" class="material-icons md-36">event</i></a>
                 </div>
                 <div class="flex-item">
-                    <a href=""><i class="material-icons md-36">event</i></a>
+                    <a href="" data-toggle="tooltip" title="Some tooltip text!" data-placement="right"><i class="material-icons md-36">event</i></a>
+                </div>
+            </div>
+        </nav>
+
+        <nav id="dropdown">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a href="">MENU1</a>
+                </div>
+                <div class="flex-item">
+                    <a href="">MENU2</a>
+                </div>
+                <div class="flex-item">
+                    <a href="">MENU3</a>
                 </div>
             </div>
         </nav>
@@ -63,6 +90,33 @@ description = "Default layout"
 
         <!-- Content -->
         <section id="layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav id="main">
+                            <div class="flex-container">
+                                <div class="flex-item" style="flex-grow: 1">
+                                    <div class="float-right">
+                                        <a id="menu1">VISIT</a>
+                                        <a>DISCOVER</a>
+                                    </div>
+                                </div>
+                                <div class="flex-item" style="flex-grow: 0">
+                                    <span id="logo" style="text-align:center">MARE<br>FORUM</span>
+                                </div>
+                                <div class="flex-item" style="flex-grow: 1">
+                                    <div class="float-left">
+                                        <a>ANNOUNCEMENTANNOUNCEMENT</a>
+                                        <a>ABOUT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
             {% page %}
         </section>
 

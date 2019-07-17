@@ -14,7 +14,58 @@
 
 .material-icons { color: #fce373; }
 
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #fce373;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'News Cycle', sans-serif;
+	color: #231f20;
+}
+
+a, p, span {
+	font-family: 'Open Sans', sans-serif;
+	color: #231f20;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+#logo {
+	font-family: 'News Cycle', sans-serif;
+	color: #231f20;
+	display: inline-block;
+    text-align: center;
+    font-size: 35px;
+    line-height: 29px;
+    margin: 0 35px;
+}
+
+.flex-container {
+	display: flex;
+}
+
+nav#main {
+	margin-top: 50px;
+}
+
+nav#main .flex-container {
+	justify-content: center;
+	align-items: center;
+}
+
+nav#main a {
+	font-size: 20px;
+	margin: 0 35px;
+}
+
 @media (max-width: 575px) {
+	#layout-content {
+		margin-left: 0;
+	}
+
 	nav#secondary {
 		height: 75px;
 		width: 100vw;
@@ -71,9 +122,17 @@
 		font-size: 25px;
 		padding: 20px 100px;
 	}
+
+	nav#dropdown {
+		display: none;
+	}
 }
 
 @media (min-width: 576px) {
+	#layout-content {
+		margin-left: 75px;
+	}
+
 	nav#secondary {
 		height: 100vh;
 		width: 75px;
@@ -81,6 +140,7 @@
 		top: 0;
 		left: 0;
 		background-color: #231f20;
+		z-index: 9;
 	}
 
 	nav#secondary .flex-container {
@@ -100,6 +160,17 @@
 	}
 
 	nav#mobile {
+		display: none;
+	}
+
+	nav#dropdown {
+		height: 500px;
+		width: 100vw;
+		position: absolute;
+		top: 114px;
+		left: 0;
+		background-color: #cca69a;
+		z-index: 7;
 		display: none;
 	}
 }
